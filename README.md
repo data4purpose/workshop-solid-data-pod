@@ -7,4 +7,6 @@ The material for our workshop around solid data pods.
 
 ```
 git clone https://github.com/CommunitySolidServer/CommunitySolidServer.git
+cd CommunitySolidServer
+docker run --rm -v ~/Solid:/data -p 3000:3000 -it solidproject/community-server:latest
 ```
