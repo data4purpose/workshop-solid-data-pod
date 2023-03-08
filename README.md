@@ -27,10 +27,8 @@ docker run --rm -v ~/Solid:/data -p 3000:3000 -it solidproject/community-server:
 ```
 cd solid-demo-app
 npm init -y
-#npm init
 npm install @inrupt/solid-client @inrupt/solid-client-authn-browser @inrupt/vocab-common-rdf @inrupt/vocab-solid
 npm install buffer
 npm install webpack webpack-cli webpack-dev-server css-loader style-loader --save-dev
-# touch webpack.config.js
 npm run build && npm run start
 ```
