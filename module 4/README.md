@@ -1,7 +1,7 @@
 ## Info
 
-The Python scripts in this folder use hard coded credentials for username,
-Pod-URL and password.
+The Python scripts in this folder use hard coded credentials (username,password) 
+and also for IDP provider URL, and Data Pod-URL.
 
 The password is loaded from a .env file. This .env file must stay on your computer.
 We have added it to .gitignore file.
