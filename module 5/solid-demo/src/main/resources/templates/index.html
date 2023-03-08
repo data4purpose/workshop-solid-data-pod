@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Solid Spring Demo</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+
+<p th:text="'Hello, ' + ${name} + '!'"></p>
+
+<h2>Update your name</h2>
+<form method="POST" th:action="@{/update}">
+    <input type="text" th:name="new_name"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<h2>Access a protected resource</h2>
+<form method="POST" th:action="@{/get-resource}">
+    <input type="text" size="75" th:name="resource_uri"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<form name="logoutForm" th:hidden="true" method="post" th:action="@{/logout}">
+    <input type="submit" value="Logout"/>
+</form>
+[<a href="javascript: logoutForm.submit();">Logout</a>]
+
+</body>
+</html>

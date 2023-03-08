@@ -1,0 +1,29 @@
+@prefix : <#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix stat: <http://www.w3.org/ns/posix/stat#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prof: <http://www.w3.org/ns/dx/prof/>.
+@prefix n: <http://ecolytiq.com/ns/>.
+@prefix eco: <>.
+
+n:sustainabilityprofile
+    a prof:Profile, ldp:BasicContainer, ldp:Container;
+    n:sustainabilityprofilemeasuredPC_isEnergyEfficient "yes";
+    n:sustainabilityprofilemeasuredPC_isEnergyEfficient_prob "0.67";
+    n:sustainabilityprofilereportedPC_isVegetarian "true";
+    n:sustainabilityprofilereportedPC_ownsACar "true";
+    n:sustainabilityprofilereportedPC_ownsAFlat "false";
+    n:sustainabilityprofilereportedPC_rentsAFlat "false";
+    dct:modified
+    "2022-03-21T07:52:44Z"^^xsd:dateTime, "2022-03-21T08:03:40Z"^^xsd:dateTime;
+    rdfs:label "kamir's sustainability profile, created by ecolytiq";
+    stat:mtime 1647849164.283, 1647849820.598;
+    stat:size 4096.
+
+eco:
+    a ldp:BasicContainer, ldp:Container;
+    dct:modified "2022-03-21T08:03:40Z"^^xsd:dateTime;
+    stat:mtime 1647849820.598;
+    stat:size 4096.
