@@ -12,6 +12,6 @@ it.
 ## Running
 
 * Install [Bazel](https://bazel.build).
-* Run the app with: `bazel run :flask_solid_main`.
+* Run the app with: `bazel run :solid_flask_main`.
   If you want to use a issuer other than https://solidcommunity.net/, pass:
   `bazel run :flask_solid_main -- --issuer=https://...`

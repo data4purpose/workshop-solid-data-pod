@@ -127,8 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-/module 1/CommunitySolidServer/
-/module 2/solid-shell
-/module 2/solid-shell/node_modules/
-/module 3/solid-demo-app/node_modules/
-/module 3/solid-demo-app/dist/
+/module-1/CommunitySolidServer/
+/module-2/solid-shell
+/module-2/solid-shell/node_modules/
+/module-3/solid-demo-app/node_modules/
+/module-3/solid-demo-app/dist/

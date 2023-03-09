@@ -89,6 +89,11 @@ _TEMPLATE = """
   Use the form below to read a resource.
 {% endif %}
 
+<hr>
+https://kamir.solidcommunity.net <br>
+https://storage.inrupt.com/dc8149eb-110c-431c-8c92-6359e47f98fa/ <br>
+<hr>
+
 <form action=/ method=GET>
   <input
       value="{{ resource }}"

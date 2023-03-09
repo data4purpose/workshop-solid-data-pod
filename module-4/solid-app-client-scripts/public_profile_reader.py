@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import requests
+
 ###########################################################
 #
-# This script is a Solid-Datapod-Client.
+# This script is a Solid-Data Pod-Client.
 #
 #   An personal preferences profile is used to illustrate
-#   public data sharing, using the personal datapod.
+#   public data sharing, using a personal datapod.
 #
 #   References:
 #   -----------
@@ -13,17 +15,12 @@
 #   * https://github.com/twonote/solid-file-python
 #
 ###########################################################
-
+# https://rdflib.readthedocs.io/en/stable/index.html
 #
-# Provide new facts and add those to the profile ....
-#
-
 from rdflib import Graph, URIRef, Literal, BNode
 from rdflib.namespace import RDF, RDFS
 
 from rdflib import Graph
-
-import requests
 
 url = "http://www.w3.org/People/Berners-Lee/card"
 f = requests.get(url)
@@ -36,7 +33,6 @@ g1.parse(url, format="turtle")
 for s, p, o in g1:
     print(s, p, o)
 
-#https://rdflib.readthedocs.io/en/stable/index.html
 
 fileName = "data/exampleprofile.ttl"
 with open(fileName, 'r') as file:
@@ -45,7 +41,3 @@ g2 = Graph()
 g2.parse(fileName, format="turtle")
 for s, p, o in g2:
     print(s, p, o)
-
-#
-# Store the changed profile data in the datapod ....
-#

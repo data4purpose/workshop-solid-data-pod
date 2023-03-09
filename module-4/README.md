@@ -1,6 +1,18 @@
-## Info
+# Step 4
 
-The Python scripts in this folder use hard coded credentials (username,password) 
+## solid-flask-master
+
+This project provides the stub for a flask-based web application.
+
+To start the app:
+
+```
+cd solid-flask-master
+bazel run :solid_flask_main
+```
+## solid-app-client-scripts
+
+The Python scripts in this folder use hard coded credentials (username,password)
 and also for IDP provider URL, and Data Pod-URL.
 
 The password is loaded from a .env file. This .env file must stay on your computer.

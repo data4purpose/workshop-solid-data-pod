@@ -5,5 +5,7 @@
     <mapping directory="$PROJECT_DIR$/module 1/CommunitySolidServer" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/module 2/solid-shell" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/module 2/solid-spring-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module-1/CommunitySolidServer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module-2/solid-shell" vcs="Git" />
   </component>
 </project>

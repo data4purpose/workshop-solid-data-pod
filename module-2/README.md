@@ -1,3 +1,4 @@
+# Step 2
 ## Install and start Solid Shell
 
 ```
@@ -16,5 +17,4 @@ get http://localhost:3000/
 get http://localhost:3000/profile/card#me 
 post http://localhost:3000/private_data/demo.ttl "a b c."
   
-
 ```

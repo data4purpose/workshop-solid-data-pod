@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
-PASSWORD = "12345PodTest#"
-
 ###########################################################
 #
 # This script is a Solid-Datapod-Client.
@@ -19,23 +13,32 @@ PASSWORD = "12345PodTest#"
 #   * https://github.com/twonote/solid-file-python
 #
 ###########################################################
-#
-# 1. We configer the client credentials to a local data pod
-#
-#USERNAME = "kamir1604"
-#PASSWORD = ""
-#
-#IDP = 'https://localhost:8443'
-#POD_ENDPOINT = "https://kamir1604.localhost:8443/profile"
 
-#
-# 2. Alternatively, we configure the client credentials to a public data pod,
-#    hosted by the solidcommunity
-#
-USERNAME = "kamir"
+from dotenv import load_dotenv
+import os
 
-IDP = 'https://solidcommunity.net'
-POD_ENDPOINT = "https://kamir.solidcommunity.net"
+load_dotenv()  # take environment variables from .env.
+
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
+IDP = os.getenv("IDP")
+WEB_ID = os.getenv("WEB_ID")
+POD_ENDPOINT = os.getenv("POD_ENDPOINT")
+
+APP_NAME=os.getenv("APP_NAME")
+CLIENT_ID=os.getenv("CLIENT_ID")
+CLIENT_SECRET=os.getenv("CLIENT_SECRET")
+
+print( "---------------------------------")
+print( "USERNAME",USERNAME )
+print( "PASSWORD",PASSWORD )
+print( "IDP",IDP )
+print( "WEB_ID",WEB_ID )
+print( "POD_ENDPOINT",POD_ENDPOINT )
+print( "APP_NAME",APP_NAME )
+print( "CLIENT_ID",CLIENT_ID )
+print( "CLIENT_SECRET", CLIENT_SECRET)
+print( "---------------------------------")
 
 #
 # For self hosted data pods with self signed certificates we have to deactivate certificate validation
@@ -70,12 +73,16 @@ class Auth2:
         }
 
         r = self.client.post(url, data=data)
-        r.raise_for_status()
+
+        print( r.headers )
+
+        # r.raise_for_status()
 
         if not self.is_login:
             raise Exception('Cannot login.')
 
-        print("* ", r)
+        print("* URL      : ", url)
+        print("* RESPONSE : ", r)
 
 #
 # The solid-file package is needed for this example to work.
