@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+PASSWORD = "12345PodTest#"
+
 ###########################################################
 #
 # This script is a Solid-Datapod-Client.
@@ -230,5 +232,12 @@ for s, p, o in g:
         layer_weights[parts[1]] = o
         print( str(parts[1]) + " => " + str( layer_weights[parts[1]] ) )
 
+
+
+
+
+folder_url = f"{POD_ENDPOINT}/public/myList_CLT2023"
+resp = api.get(folder_url)
+print(f"-----PROFILE DATA-----\n{resp.text}----------------------")
 
 print( "Done." )

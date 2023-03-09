@@ -19,3 +19,8 @@ docker run --rm -v ~/Solid:/data -p 3000:3000 -it -e CSS_CONFIG=config/file-no-s
 
 Documentation for the _CommunitySolidServer_ is available here:
 https://github.com/CommunitySolidServer/CommunitySolidServer
+
+```
+```
+
+![img.png](img.png)
