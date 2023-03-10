@@ -1,0 +1,992 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema",
+    "$id": "http://dfka.net/electronic_receipt.json",
+    "title": "Electronic receipt",
+    "version": "0.0.1",
+    "type": "object",
+    "required": [
+        "version",
+        "type",
+        "cash_register",
+        "head",
+        "data"
+    ],
+    "additionalProperties": true,
+    "definitions": {
+        "address": {
+            "type": "object",
+            "properties": {
+                "street": {
+                    "description": "Street name and house number",
+                    "type": "string",
+                    "maxLength": 60
+                },
+                "postal_code": {
+                    "description": "Postal code",
+                    "type": "string",
+                    "maxLength": 10
+                },
+                "city": {
+                    "description": "City name",
+                    "type": "string",
+                    "maxLength": 62
+                },
+                "country_code": {
+                    "$ref": "#/definitions/country_code"
+                }
+            }
+        },
+        "country_code": {
+            "description": "ISO 3166 alpha-3 country code",
+            "enum": [
+                "ALA",
+                "AFG",
+                "ALB",
+                "DZA",
+                "ASM",
+                "AND",
+                "AGO",
+                "AIA",
+                "ATA",
+                "ATG",
+                "ARG",
+                "ARM",
+                "ABW",
+                "AUS",
+                "AUT",
+                "AZE",
+                "BHS",
+                "BHR",
+                "BGD",
+                "BRB",
+                "BLR",
+                "BEL",
+                "BLZ",
+                "BEN",
+                "BMU",
+                "BTN",
+                "BOL",
+                "BIH",
+                "BWA",
+                "BVT",
+                "BRA",
+                "IOT",
+                "BRN",
+                "BGR",
+                "BFA",
+                "BDI",
+                "KHM",
+                "CMR",
+                "CAN",
+                "CPV",
+                "CYM",
+                "CAF",
+                "TCD",
+                "CHL",
+                "CHN",
+                "CXR",
+                "CCK",
+                "COL",
+                "COM",
+                "COD",
+                "COG",
+                "COK",
+                "CRI",
+                "CIV",
+                "HRV",
+                "CUB",
+                "CYP",
+                "CZE",
+                "DNK",
+                "DJI",
+                "DMA",
+                "DOM",
+                "ECU",
+                "EGY",
+                "SLV",
+                "GNQ",
+                "ERI",
+                "EST",
+                "ETH",
+                "FLK",
+                "FRO",
+                "FJI",
+                "FIN",
+                "FRA",
+                "GUF",
+                "PYF",
+                "ATF",
+                "GAB",
+                "GMB",
+                "GEO",
+                "DEU",
+                "GHA",
+                "GIB",
+                "GRC",
+                "GRL",
+                "GRD",
+                "GLP",
+                "GUM",
+                "GTM",
+                "GIN",
+                "GNB",
+                "GUY",
+                "HTI",
+                "HMD",
+                "HND",
+                "HKG",
+                "HUN",
+                "ISL",
+                "IND",
+                "IDN",
+                "IRN",
+                "IRQ",
+                "IRL",
+                "ISR",
+                "ITA",
+                "JAM",
+                "JPN",
+                "JOR",
+                "KAZ",
+                "KEN",
+                "KIR",
+                "PRK",
+                "KOR",
+                "KWT",
+                "KGZ",
+                "LAO",
+                "LVA",
+                "LBN",
+                "LSO",
+                "LBR",
+                "LBY",
+                "LIE",
+                "LTU",
+                "LUX",
+                "MAC",
+                "MKD",
+                "MDG",
+                "MWI",
+                "MYS",
+                "MDV",
+                "MLI",
+                "MLT",
+                "MHL",
+                "MTQ",
+                "MRT",
+                "MUS",
+                "MYT",
+                "MEX",
+                "FSM",
+                "MDA",
+                "MCO",
+                "MNG",
+                "MSR",
+                "MAR",
+                "MOZ",
+                "MMR",
+                "NAM",
+                "NRU",
+                "NPL",
+                "NLD",
+                "ANT",
+                "NCL",
+                "NZL",
+                "NIC",
+                "NER",
+                "NGA",
+                "NIU",
+                "NFK",
+                "MNP",
+                "NOR",
+                "OMN",
+                "PAK",
+                "PLW",
+                "PSE",
+                "PAN",
+                "PNG",
+                "PRY",
+                "PER",
+                "PHL",
+                "PCN",
+                "POL",
+                "PRT",
+                "PRI",
+                "QAT",
+                "REU",
+                "ROU",
+                "RUS",
+                "RWA",
+                "SHN",
+                "KNA",
+                "LCA",
+                "SPM",
+                "VCT",
+                "WSM",
+                "SMR",
+                "STP",
+                "SAU",
+                "SEN",
+                "SCG",
+                "SYC",
+                "SLE",
+                "SGP",
+                "SVK",
+                "SVN",
+                "SLB",
+                "SOM",
+                "ZAF",
+                "SGS",
+                "ESP",
+                "LKA",
+                "SDN",
+                "SUR",
+                "SJM",
+                "SWZ",
+                "SWE",
+                "CHE",
+                "SYR",
+                "TWN",
+                "TJK",
+                "TZA",
+                "THA",
+                "TLS",
+                "TGO",
+                "TKL",
+                "TON",
+                "TTO",
+                "TUN",
+                "TUR",
+                "TKM",
+                "TCA",
+                "TUV",
+                "UGA",
+                "UKR",
+                "ARE",
+                "GBR",
+                "USA",
+                "UMI",
+                "URY",
+                "UZB",
+                "VUT",
+                "VAT",
+                "VEN",
+                "VNM",
+                "VGB",
+                "VIR",
+                "WLF",
+                "ESH",
+                "YEM",
+                "ZMB",
+                "ZWE"
+            ]
+        },
+        "currency": {
+            "description": "ISO 4217 currency code",
+            "enum": [
+                "AED",
+                "AFN",
+                "ALL",
+                "AMD",
+                "ANG",
+                "AOA",
+                "ARS",
+                "AUD",
+                "AWG",
+                "AZN",
+                "BAM",
+                "BBD",
+                "BDT",
+                "BGN",
+                "BHD",
+                "BIF",
+                "BMD",
+                "BND",
+                "BOB",
+                "BOV",
+                "BRL",
+                "BSD",
+                "BTN",
+                "BWP",
+                "BYN",
+                "BYR",
+                "BZD",
+                "CAD",
+                "CDF",
+                "CHE",
+                "CHF",
+                "CHW",
+                "CLF",
+                "CLP",
+                "CN",
+                "COP",
+                "COU",
+                "CRC",
+                "CUC",
+                "CUP",
+                "CVE",
+                "CZK",
+                "DJF",
+                "DKK",
+                "DOP",
+                "DZD",
+                "EGP",
+                "ERN",
+                "ETB",
+                "EUR",
+                "FJD",
+                "FKP",
+                "GBP",
+                "GEL",
+                "GHS",
+                "GIP",
+                "GMD",
+                "GNF",
+                "GTQ",
+                "GYD",
+                "HKD",
+                "HNL",
+                "HRK",
+                "HTG",
+                "HUF",
+                "IDR",
+                "ILS",
+                "INR",
+                "IQD",
+                "IRR",
+                "ISK",
+                "JMD",
+                "JOD",
+                "JPY",
+                "KES",
+                "KGS",
+                "KHR",
+                "KMF",
+                "KPW",
+                "KRW",
+                "KWD",
+                "KYD",
+                "KZT",
+                "LAK",
+                "LBP",
+                "LKR",
+                "LRD",
+                "LSL",
+                "LYD",
+                "MAD",
+                "MDL",
+                "MGA",
+                "MKD",
+                "MMK",
+                "MNT",
+                "MOP",
+                "MRO",
+                "MUR",
+                "MVR",
+                "MWK",
+                "MXN",
+                "MXV",
+                "MYR",
+                "MZN",
+                "NAD",
+                "NGN",
+                "NIO",
+                "NOK",
+                "NPR",
+                "NZD",
+                "OMR",
+                "PAB",
+                "PEN",
+                "PGK",
+                "PHP",
+                "PKR",
+                "PLN",
+                "PYG",
+                "QAR",
+                "RON",
+                "RSD",
+                "RUB",
+                "RWF",
+                "SAR",
+                "SBD",
+                "SCR",
+                "SDG",
+                "SSP",
+                "SEK",
+                "SGD",
+                "SHP",
+                "SLL",
+                "SOS",
+                "SRD",
+                "STD",
+                "SVC",
+                "SYP",
+                "SZL",
+                "THB",
+                "TJS",
+                "TMT",
+                "TND",
+                "TOP",
+                "TRY",
+                "TTD",
+                "TWD",
+                "TZS",
+                "UAH",
+                "UGX",
+                "USD",
+                "UYI",
+                "UYU",
+                "UZS",
+                "VEF",
+                "VND",
+                "VUV",
+                "WST",
+                "XAF",
+                "XCD",
+                "XOF",
+                "XPF",
+                "XSU",
+                "YER",
+                "ZAR",
+                "ZMW",
+                "ZWL"
+            ]
+        }
+    },
+    "properties": {
+        "version": {
+            "type": "string",
+            "description": "Version of the electronic receipt specification",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "type": {
+            "type": "string",
+            "description": "Type of receipt",
+            "enum": [
+                "INVOICE"
+            ]
+        },
+        "cash_register": {
+            "type": "object",
+            "description": "Information about the originating cash register",
+            "required": [
+                "serial_number"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "serial_number": {
+                    "type": "string",
+                    "description": "The serial number of the cash register"
+                }
+            }
+        },
+        "head": {
+            "type": "object",
+            "description": "Header data of the receipt",
+            "required": [
+                "number",
+                "date"
+            ],
+            "dependencies": {
+                "delivery_period_end": [ "delivery_period_start" ]
+            },
+            "additionalProperties": true,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique id of the receipt"
+                },
+                "number": {
+                    "type": "string",
+                    "description": "Receipt number"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Receipt date"
+                },
+                "delivery_period_start": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Start of the delivery period, which applies to the entire receipt"
+                },
+                "delivery_period_end": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "End of the delivery period, which applies to the entire receipt"
+                },
+                "seller": {
+                    "type": "object",
+                    "description": "Information about the seller / company",
+                    "additionalProperties": true,
+                    "required": [
+                        "name",
+                        "address",
+                        "tax_number"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Seller / company name"
+                        },
+                        "tax_number": {
+                            "type": "string",
+                            "description": "Tax number or VAT-ID number"
+                        },
+                        "tax_exemption": {
+                            "type": "boolean",
+                            "description": "Set this is if the seller is exempt from turnover tax",
+                            "default": false
+                        },
+                        "tax_exemption_note": {
+                            "type": "string",
+                            "description": "A note to be shown on the receipt if the seller is exempt from turnover tax"
+                        },
+                        "address": {
+                            "$ref": "#/definitions/address"
+                        }
+                    }
+                },
+                "buyer_text": {
+                    "type": "string",
+                    "description": "Name and address of the buyer / customer as unstructured text field",
+                    "examples": [
+                        "Erika Mustermann\nHeidestrasse 17\n51147 Köln"
+                    ]
+                },
+                "buyer": {
+                    "type": "object",
+                    "description": "Buyer / customer information",
+                    "required": [
+                        "name",
+                        "address"
+                    ],
+                    "additionalProperties": true,
+                    "properties": {
+                        "customer_number": {
+                            "type": "string",
+                            "description": "Customer number"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Buyer / customer name"
+                        },
+                        "tax_number": {
+                            "type": "string",
+                            "description": "Tax number of the buyer / customer"
+                        },
+                        "address": {
+                            "$ref": "#/definitions/address",
+                            "description": "Address of the buyer / customer"
+                        }
+                    }
+                }
+            }
+        },
+        "data": {
+            "type": "object",
+            "description": "The data of the receipt",
+            "required": [
+                "currency",
+                "full_amount_incl_vat",
+                "payment_types",
+                "vat_amounts",
+                "lines"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "currency": {
+                    "description": "ISO 4217 currency code (alphabetic code) of all amounts where the currency is not explicitly stated",
+                    "$ref": "#/definitions/currency"
+                },
+                "full_amount_incl_vat": {
+                    "type": "number",
+                    "description": "The gross total of the receipt",
+                    "multipleOf": 0.01
+                },
+                "payment_types": {
+                    "type": "array",
+                    "description": "List of payment amounts",
+                    "additionalItems": true,
+                    "items": {
+                        "type": "object",
+                        "description": "Payment amount",
+                        "additionalProperties": true,
+                        "required": [
+                            "name",
+                            "amount"
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the payment"
+                            },
+                            "amount": {
+                                "type": "number",
+                                "description": "Payment amount in local currency"
+                            },
+                            "foreign_amount": {
+                                "type": "number",
+                                "description": "Payment amount in foreign currency"
+                            },
+                            "foreign_currency": {
+                                "description": "ISO 4217 currency code (alphabetic code) of the foreign_amount",
+                                "$ref": "#/definitions/currency"
+                            }
+                        },
+                        "dependencies": {
+                            "foreign_amount": [ "foreign_currency" ],
+                            "foreign_currency": [ "foreign_amount" ]
+                        }
+                    }
+                },
+                "vat_amounts": {
+                    "type": "array",
+                    "description": "Totals per VAT as normally printed on receipt",
+                    "additionalItems": true,
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "percentage",
+                            "incl_vat",
+                            "excl_vat",
+                            "vat"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "percentage": {
+                                "type": "number",
+                                "description": "VAT percentage",
+                                "minimum": 0,
+                                "maximum": 100,
+                                "multipleOf": 0.01
+                            },
+                            "incl_vat": {
+                                "type": "number",
+                                "description": "Gross amount",
+                                "multipleOf": 0.01
+                            },
+                            "excl_vat": {
+                                "type": "number",
+                                "description": "Net amount",
+                                "multipleOf": 0.01
+                            },
+                            "vat": {
+                                "type": "number",
+                                "description": "VAT amount (vat = incl_vat - excl_vat)",
+                                "multipleOf": 0.01
+                            }
+                        }
+                    }
+                },
+                "lines": {
+                    "type": "array",
+                    "description": "List of receipt lines",
+                    "additionalItems": true,
+                    "items": {
+                        "type": "object",
+                        "description": "Receipt line",
+                        "required": [
+                            "text"
+                        ],
+                        "dependencies": {
+                            "delivery_period_end": [ "delivery_period_start" ]
+                        },
+                        "additionalProperties": true,
+                        "properties": {
+                            "text": {
+                                "type": "string",
+                                "description": "Text of the receipt line"
+                            },
+                            "additional_text": {
+                                "type": "string",
+                                "description": "Additional information for the receipt line"
+                            },
+                            "vat_amounts": {
+                                "type": "array",
+                                "description": "Total amount of the line per VAT",
+                                "additionalItems": true,
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "description": "When the line is calculated based on the gross amount",
+                                            "required": [
+                                                "percentage",
+                                                "incl_vat"
+                                            ],
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "percentage": {
+                                                    "type": "number",
+                                                    "description": "VAT percentage",
+                                                    "minimum": 0,
+                                                    "maximum": 100,
+                                                    "multipleOf": 0.01
+                                                },
+                                                "incl_vat": {
+                                                    "type": "number",
+                                                    "description": "Gross amount",
+                                                    "multipleOf": 0.00001
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "object",
+                                            "description": "When the line is calculated based on the net amount",
+                                            "required": [
+                                                "percentage",
+                                                "excl_vat",
+                                                "vat"
+                                            ],
+                                            "additionalProperties": true,
+                                            "properties": {
+                                                "percentage": {
+                                                    "type": "number",
+                                                    "description": "VAT percentage",
+                                                    "minimum": 0,
+                                                    "maximum": 100,
+                                                    "multipleOf": 0.01
+                                                },
+                                                "excl_vat": {
+                                                    "type": "number",
+                                                    "description": "Net amount",
+                                                    "multipleOf": 0.00001
+                                                },
+                                                "vat": {
+                                                    "type": "number",
+                                                    "description": "VAT amount (vat = incl_vat - excl_vat)",
+                                                    "multipleOf": 0.00001
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "item": {
+                                "type": "object",
+                                "description": "Product item details of the line",
+                                "required": [
+                                    "number",
+                                    "quantity",
+                                    "price_per_unit"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "number": {
+                                        "type": "string",
+                                        "description": "Product number"
+                                    },
+                                    "gtin": {
+                                        "type": "string",
+                                        "description": "Optional GTIN / EAN of the product",
+                                        "minLength": 1,
+                                        "maxLength": 50
+                                    },
+                                    "quantity": {
+                                        "type": "number",
+                                        "description": "Quantity",
+                                        "multipleOf": 0.001
+                                    },
+                                    "quantity_measure": {
+                                        "type": "string",
+                                        "description": "Quantity measure"
+                                    },
+                                    "price_per_unit": {
+                                        "type": "number",
+                                        "description": "Price per unit",
+                                        "multipleOf": 0.00001
+                                    }
+                                }
+                            },
+                            "delivery_period_start": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "Start of the delivery period, which applies to a single line"
+                            },
+                            "delivery_period_end": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "End of the delivery period, which applies to a single line"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "security": {
+            "type": "object",
+            "description": "Fiscal security data",
+            "additionalProperties": true,
+            "properties": {
+                "tse": {
+                    "type": "object",
+                    "description": "Fiscal security data for the German fiscalization",
+                    "required": [
+                        "serial_number",
+                        "signature_algorithm",
+                        "log_time_format",
+                        "certificate",
+                        "timestamp_start",
+                        "timestamp_end",
+                        "transaction_number",
+                        "signature_number",
+                        "signature"
+                    ],
+                    "additionalProperties": true,
+                    "properties": {
+                        "serial_number": {
+                            "type": "string",
+                            "description": "Serial number of the TSS",
+                            "minLength": 64,
+                            "pattern": "^([0-9a-fA-F]{2})+$"
+                        },
+                        "signature_algorithm": {
+                            "type": "string",
+                            "description": "Signature algorithm used by the TSS",
+                            "default": "ecdsa-plain-SHA256",
+                            "enum": [
+                                "ecdsa-plain-SHA224",
+                                "ecdsa-plain-SHA256",
+                                "ecdsa-plain-SHA384",
+                                "ecdsa-plain-SHA512",
+                                "ecdsa-plain-SHA3-224",
+                                "ecdsa-plain-SHA3-256",
+                                "ecdsa-plain-SHA3-384",
+                                "ecdsa-plain-SHA3-512",
+                                "ecsdsa-plain-SHA224",
+                                "ecsdsa-plain-SHA256",
+                                "ecsdsa-plain-SHA384",
+                                "ecsdsa-plain-SHA512",
+                                "ecsdsa-plain-SHA3-224",
+                                "ecsdsa-plain-SHA3-256",
+                                "ecsdsa-plain-SHA3-384",
+                                "ecsdsa-plain-SHA3-512"
+                            ]
+                        },
+                        "log_time_format": {
+                            "type": "string",
+                            "description": "Log time format used by the TSS",
+                            "default": "unixTime",
+                            "enum": [
+                                "unixTime",
+                                "utcTime",
+                                "utcTimeWithSeconds",
+                                "generalizedTime",
+                                "generalizedTimeWithMilliseconds"
+                            ]
+                        },
+                        "certificate": {
+                            "type": "string",
+                            "description": "The certificate of the TSS (TODO: Format? base64? PEM?)",
+                            "contentEncoding": "base64"
+                        },
+                        "timestamp_start": {
+                            "type": "string",
+                            "description": "Start time stamp of the TSS transaction",
+                            "format": "date-time"
+                        },
+                        "timestamp_end": {
+                            "type": "string",
+                            "description": "End time stamp of the TSS transaction",
+                            "format": "date-time"
+                        },
+                        "first_order": {
+                            "type": "string",
+                            "description": "Time stamp of the first order",
+                            "format": "date-time"
+                        },
+                        "transaction_number": {
+                            "type": "integer",
+                            "description": "The TSS transaction number",
+                            "minimum": 0
+                        },
+                        "signature_number": {
+                            "type": "integer",
+                            "description": "The TSS signature number",
+                            "minimum": 0
+                        },
+                        "process_data": {
+                            "type": "string",
+                            "description": "The process data signed by the TSS"
+                        },
+                        "process_type": {
+                            "type": "string",
+                            "description": "The process type signed by the TSS",
+                            "default": "Kassenbeleg-V1",
+                            "maxLength": 30
+                        },
+                        "signature": {
+                            "type": "string",
+                            "description": "The signature created by the TSS",
+                            "contentEncoding": "base64"
+                        }
+                    }
+                }
+            }
+        },
+        "misc": {
+            "type": "object",
+            "description": "Miscellaneous information",
+            "additionalProperties": true,
+            "properties": {
+                "logo": {
+                    "type": "object",
+                    "description": "Logo to be included in the receipt",
+                    "required": [
+                        "content_type",
+                        "content"
+                    ],
+                    "additionalProperties": true,
+                    "properties": {
+                        "content_type": {
+                            "type": "string",
+                            "description": "MIME type of the logo",
+                            "examples": [
+                                "image/png",
+                                "text/x-uri"
+                            ]
+                        },
+                        "content": {
+                            "type": "string",
+                            "description": "Content of the logo - base64 encoded",
+                            "contentEncoding": "base64"
+                        }
+                    }
+                },
+                "footer_text": {
+                    "type": "string",
+                    "description": "Optional footer text of the receipt"
+                },
+                "additional_receipts": {
+                    "type": "array",
+                    "description": "List of additional receipts as text, image or PDF",
+                    "items": {
+                        "type": "object",
+                        "description": "Additional receipt",
+                        "required": [
+                            "content_type",
+                            "content"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "content_type": {
+                                "type": "string",
+                                "description": "Content type of receipt",
+                                "examples": [
+                                    "text/plain",
+                                    "application/pdf",
+                                    "image/png"
+                                ]
+                            },
+                            "content": {
+                                "type": "string",
+                                "description": "BASE64 encoded receipt content"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

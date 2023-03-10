@@ -1,0 +1,91 @@
+{
+  "version": "640295.4806597722.63013087747",
+  "type": "INVOICE",
+  "cash_register": {
+    "serial_number": "asdf/1234"
+  },
+  "head": {
+    "number": "123456789",
+    "date": "2023-03-12T09:01:01.0Z",
+    "buyer": {
+      "name": "Penguin Tux",
+      "address": {
+        "country_code": "DEU",
+        "city": "Chemnitz",
+        "street": "Reichenhainer Str. 70",
+        "postal_code": "09126"
+      },
+      "tax_number": "12/345/67890",
+      "customer_number": "102030"
+    }
+  },
+  "data": {
+    "currency": "EUR",
+    "full_amount_incl_vat": -44426732.97,
+    "payment_types": [
+      {
+        "name": "Bar",
+        "amount": 5.00
+      }
+    ],
+    "vat_amounts": [
+      {
+        "percentage": 0,
+        "incl_vat": 5.00,
+        "excl_vat": 5.00,
+        "vat": 0.00
+      }
+    ],
+    "lines": [
+      {
+        "text": "Workshop Ticket",
+        "additional_text": "Datenbewusstsein: Solid Data Pods für Deine Daten",
+        "vat_amounts": [
+          {
+            "percentage": 0,
+            "excl_vat": 5.00,
+            "vat": 0.00
+          }
+        ],
+        "delivery_period_end": "2023-03-12T12:00:00.0Z",
+        "item": {
+          "number": "WS215",
+          "quantity": 1,
+          "price_per_unit": 5.00,
+          "quantity_measure": "Stück"
+        },
+        "delivery_period_start": "2023-03-12T12:00:00.0Z"
+      }
+    ]
+  },
+  "misc": {
+    "footer_text": "Wir danken für Ihren Besuch.",
+    "additional_receipts": [
+      {
+        "content_type": "text/plain",
+        "content": "Hier könnte der EC-Kundenbeleg stehen"
+      },
+
+    ]
+  },
+  "security": {
+    "tse": {
+      "serial_number": "DCA1fc8FFBC72E5eE53db0dCf04bEEFCDCdA33beAac3DB6bf5166Af42eb2cc0Fe91EBEE0DBCe",
+      "signature_algorithm": "ecdsa-plain-SHA512",
+      "log_time_format": "unixTime",
+      "certificate": "ipsum cillum id",
+      "timestamp_start": "2023-03-12T09:01:03.2Z",
+      "timestamp_end": "2023-03-12T09:01:17.2Z",
+      "transaction_number": 68774927,
+      "signature_number": 30506688,
+      "signature": "non aliquip adipisicing",
+      "first_order": "2023-03-12T08:58:27.3Z",
+      "process_data": "Beleg^5.00_0.00_0.00_0.00_0.00^5.00:Bar",
+      "process_type": "Kassenbeleg-V1"
+    },
+    "Duis_39d": "ad exercitation proident",
+    "do_d": "voluptate Ut pariatur culpa",
+    "Utf": -56029682,
+    "adipisicingdd6": false
+  }
+}
