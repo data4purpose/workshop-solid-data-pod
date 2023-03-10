@@ -1,8 +1,8 @@
 ## Hands-on workshop about Solid Data Pods
 
-The repository contains the material for our CLT2023 workshop around solid data pods.
+The repository contains the material for our CLT2023 workshop around Solid Data Pods.
 
-We will explore the anatomy of applications using Solid-Data Pods.
+We will explore the anatomy of applications using Solid Data Pods.
 
 This workshop has been prepared for the community event: __Chemnitzer Linux-Tage__.
 
