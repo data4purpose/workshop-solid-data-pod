@@ -1,4 +1,4 @@
-## Hand-on workshop about Solid Data Pods
+## Hands-on workshop about Solid Data Pods
 
 The repository contains the material for our CLT2023 workshop around solid data pods.
 
