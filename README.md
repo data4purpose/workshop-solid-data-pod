@@ -9,6 +9,13 @@ We will explore the anatomy of applications using Solid-Data Pods.
 
 ![docs/image-2023-03-08-14-51-01-190.png](docs/image-2023-03-08-14-51-01-190.png)
 
+# solid data pod provider
+
+- solid community -- https://solidcommunity.net/
+
+- inrupt -- https://start.inrupt.com/profile
+
+- solidweb -- https://solidweb.org/
 
 # List of Modules to explore Solid Pods
 
@@ -28,3 +35,4 @@ This application stub uses the Inrupt JavaScript client libraries.
 
 ## SpringBoot application in Kotlin
 [Module 5](module-5/README.md)
+
