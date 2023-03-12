@@ -21,37 +21,28 @@ This work uses the  __Apache License, Version 2.0__, January 2004 http://www.apa
 
 ![docs/image-2023-03-08-14-51-01-190.png](docs/image-2023-03-08-14-51-01-190.png)
 
-# Workshop Goals
+## solid data pod provider
 
-__Each participant:__
-- has one (or more) registered Solid Data Pod for own experiments.
-- can create a local Solid pod for experiments.
-- can use the solid-shell to interact with a Solid Data Pod
-- can start a local solid App (using Node.js or Flask)
-- can execute and extend a Python script to interact with its Solid Data Pod
-- knows the anatomy of a typical Solid App.
-- has a basic understanding of the Solid Protocol
-- knows the purpose of the structures data model offered by Solid Pods in comparison to other establish web based storage solutions (SFTP, WebDAV)
+- solid community -- https://solidcommunity.net/
 
-# Optional Goals
+- inrupt -- https://start.inrupt.com/profile
 
-We define an example application for a use-case created by the workshop participants.
+- solidweb -- https://solidweb.org/
 
-# List of Modules
-Using the projects in this repository we provide material to explore Solid Pods and the usage of the Solid Protocol.
+## List of Modules to explore Solid Pods
 
-## Creation of a local pod
+### Creation of a local pod
 [Module 1](module-1/README.md)
 
-## Working with solid-shell
+### Working with solid-shell
 [Module 2](module-2/README.md)
 
-## Node.js based solid-client-app
+### Node.js based solid-client-app
 This application stub uses the Inrupt JavaScript client libraries.
 
 [Module 3](module-3/README.md)
 
-## Python based solid-client-apps
+### Python based solid-client-apps
 [Module 4](module-4/README.md)
 
 ## SpringBoot application in Kotlin
