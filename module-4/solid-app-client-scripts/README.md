@@ -9,3 +9,5 @@ You can use this identifier to interact with Solid pods and apps.
 ### Your new account
 Via your email address __mirko.kaempf@gmail.com__, this server lets you log in to Solid apps with your WebID __https://solid.toolbox.ecolytiq.arm.ecolytiq.network/CLT2023_01/profile/card#me__
 
+
+.env Datei anlegen !!!
