@@ -45,7 +45,7 @@ This application stub uses the Inrupt JavaScript client libraries.
 ### Python based solid-client-apps
 [Module 4](module-4/README.md)
 
-## SpringBoot application in Kotlin
+## SpringBoot application in Kotlin (W.I.P.)
 [Module 5](module-5/README.md)
 
 # Ideas for future extension
