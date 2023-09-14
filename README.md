@@ -10,6 +10,9 @@ This workshop has been prepared for the community event: __Chemnitzer Linux-Tage
 
 ![docs/intro.png](docs/intro.png)
 
+## Here is the related presentation from March 2023 @ TUC CLT2023
+https://media.ccc.de/v/clt23-214-datenbewusstsein-meine-daten-deine-daten-wessen-daten
+
 # Overview 
 
 This repository will be used for managing our open colaboration around the emerging topic: SOLID Data Pods. 
