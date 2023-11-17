@@ -177,6 +177,9 @@ profile_url = "https://kamir.solidcommunity.net/public/ecolytiq-sustainability-p
 resp = api.get(profile_url)
 print(f"-----PROFILE DATA-----\n{resp.text}----------------------")
 
+
+
+
 #
 # Provide new facts and add those to the profile ....
 #

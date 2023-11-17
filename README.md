@@ -15,6 +15,9 @@ This workshop has been prepared for the community event: __Chemnitzer Linux-Tage
 This repository will be used for managing our open colaboration around the emerging topic: SOLID Data Pods. 
 It is a private initiative supported by ecolytiq GmbH, OnfK gUG and the contributing developers.
 
+mirko.kaempf@gmail.com
+
+
 This work uses the  __Apache License, Version 2.0__, January 2004 http://www.apache.org/licenses/.
  
 
